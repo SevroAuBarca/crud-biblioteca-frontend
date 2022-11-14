@@ -36,7 +36,8 @@ interface inputBook {
   providedIn: 'root',
 })
 export class BooksService {
-  private url = 'http://localhost:3000/api/v1/books';
+  private url =
+    'https://crud-biblioteca-backend-production.up.railway.app/api/v1/books';
   private httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'multipart/form-data' }),
   };
