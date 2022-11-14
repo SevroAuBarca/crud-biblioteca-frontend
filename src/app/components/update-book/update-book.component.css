@@ -1,0 +1,26 @@
+.label-img img {
+  border-radius: 10px;
+  border: 3px solid gray;
+  padding: 5px;
+}
+
+input:checked + .label-img > img {
+  border: 3px solid red;
+}
+
+.checkbox {
+  display: none;
+}
+
+.star-label img {
+  filter: drop-shadow(1px 0 0 gray) drop-shadow(0 1px 0 gray)
+    drop-shadow(-1px 0 0 gray) drop-shadow(0 -1px 0 gray);
+}
+
+.radio-stars:checked + .star-label > img {
+  filter: drop-shadow(0 0 0 yellow);
+}
+
+.radio-stars {
+  display: none;
+}

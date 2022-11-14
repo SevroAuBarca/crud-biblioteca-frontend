@@ -1,0 +1,39 @@
+<div class="container h- flex justify-center font-noto">
+  <div class="w-1/2 mt-auto mb-auto grid grid-cols-2 p-4 gap-3">
+    <img src="{{ book.coverImage.url }}" alt="image" class="w-full" />
+    <div class="flex flex-col gap-2 w-full">
+      <h1 class="text-3xl font-bold">{{ book.title }}</h1>
+      <p class="italic">{{ book.author }}</p>
+      <p>Editorial: {{ book.editorial }}</p>
+      <p>Paginas: {{ book.pages }}</p>
+      <div class="flex gap-2">
+        <p>Caliicacion:</p>
+        <ul class="flex flex-row gap-1 items-center">
+          <li *ngFor="let in of counter(book.rating)">
+            <img
+              src="https://api.iconify.design/fluent-emoji-flat:star.svg"
+              alt=""
+            />
+          </li>
+        </ul>
+      </div>
+      <p>Sinopsis</p>
+      <p class="text-sm overflow-auto h-48 italic">
+        {{ book.sinopsis }}
+      </p>
+      <div class="mt-auto flex gap-3 justify-end">
+        <a
+          class="p-3 bg-slate-900 text-white border-white border-2 border-solid rounded-3xl hover:bg-slate-600 hover:rounded-3xl"
+          href="/edit/{{ book._id }}"
+          >Editar</a
+        >
+        <button
+          (click)="deleteBook()"
+          class="p-3 bg-red-600 text-white border-white border-2 border-solid rounded-3xl hover:bg-red-900 hover:rounded-3xl"
+        >
+          Eliminar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

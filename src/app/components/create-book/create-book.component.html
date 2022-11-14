@@ -1,0 +1,173 @@
+<div class="container h- flex justify-center font-noto">
+  <div class="w-2/4 mt-auto mb-auto flex flex-col jus p-4 gap-2">
+    <h2 class="text-xl font-bold text-center">Añadir Libro</h2>
+    <form
+      class="grid gap-3 grid-cols-2 w-full"
+      [formGroup]="checkoutForm"
+      (ngSubmit)="onSubmit()"
+    >
+      <div>
+        <div>
+          <label
+            for="coverImage"
+            class="w-auto border-dotted border-4 border-gray-500 flex flex-col p-4 cursor-pointer"
+            #labelImg
+          >
+            <img
+              class="w-12"
+              src="https://api.iconify.design/material-symbols:image-rounded.svg"
+              alt=""
+            />
+            <p>Dale clic para añadir una imagen de portada</p>
+          </label>
+          <input
+            class="hidden"
+            id="coverImage"
+            type="file"
+            accept="images/*"
+            (change)="getFile($event)"
+          />
+        </div>
+        <div class="w-auto" #imageView></div>
+      </div>
+      <div>
+        <div>
+          <label for="title"> Title </label>
+          <input
+            class="w-full border-2 border-gray-400 border-solid p-1 rounded-lg text-sm focus:border-blue-700"
+            id="title"
+            type="text"
+            formControlName="title"
+          />
+        </div>
+        <div>
+          <label for="author"> Author </label>
+          <input
+            class="w-full border-2 border-gray-400 border-solid p-1 rounded-lg text-sm focus:border-blue-700"
+            id="author"
+            type="text"
+            formControlName="author"
+          />
+        </div>
+        <div>
+          <label for="editorial"> Editorial </label>
+          <input
+            class="w-full border-2 border-gray-400 border-solid p-1 rounded-lg text-sm focus:border-blue-700"
+            id="editorial"
+            type="text"
+            formControlName="editorial"
+          />
+        </div>
+        <div>
+          <label for="pages"> Pages </label>
+          <input
+            class="w-full border-2 border-gray-400 border-solid p-1 rounded-lg text-sm focus:border-blue-700"
+            id="pages"
+            type="number"
+            min="1"
+            formControlName="pages"
+          />
+        </div>
+        <div>
+          <label for="pages"> Sinopsis </label>
+          <textarea
+            formControlName="sinopsis"
+            id="sinopsis"
+            class="w-full border-2 border-gray-400 border-solid p-1 rounded-lg text-sm focus:border-blue-700"
+          ></textarea>
+        </div>
+        <div>
+          <h3>Calificacion</h3>
+          <div class="flex gap-3 h-10">
+            <div class="h-10 w-10">
+              <input
+                class="radio-stars"
+                type="radio"
+                id="star1"
+                value="1"
+                formControlName="rating"
+              />
+              <label class="star-label w-10" for="star1">
+                <img
+                  class="w-full"
+                  src="https://api.iconify.design/fluent-emoji-flat:star.svg"
+                  alt=""
+                />
+              </label>
+            </div>
+            <div class="h-10 w-10">
+              <input
+                class="radio-stars"
+                type="radio"
+                id="star2"
+                value="2"
+                formControlName="rating"
+              />
+              <label class="star-label" for="star2">
+                <img
+                  class="w-full"
+                  src="https://api.iconify.design/fluent-emoji-flat:star.svg"
+                  alt=""
+                />
+              </label>
+            </div>
+            <div class="h-10 w-10">
+              <input
+                class="radio-stars"
+                type="radio"
+                value="3"
+                id="star3"
+                formControlName="rating"
+              />
+              <label class="star-label" for="star3">
+                <img
+                  class="w-full"
+                  src="https://api.iconify.design/fluent-emoji-flat:star.svg"
+                  alt=""
+                />
+              </label>
+            </div>
+            <div class="h-10 w-10">
+              <input
+                class="radio-stars"
+                type="radio"
+                value="4"
+                id="star4"
+                formControlName="rating"
+              />
+              <label class="star-label" for="star4">
+                <img
+                  class="w-full"
+                  src="https://api.iconify.design/fluent-emoji-flat:star.svg"
+                  alt=""
+                />
+              </label>
+            </div>
+            <div class="h-10 w-10">
+              <input
+                class="radio-stars"
+                type="radio"
+                value="5"
+                id="star5"
+                formControlName="rating"
+              />
+              <label class="star-label" for="star5">
+                <img
+                  class="w-full"
+                  src="https://api.iconify.design/fluent-emoji-flat:star.svg"
+                  alt=""
+                />
+              </label>
+            </div>
+          </div>
+        </div>
+        <button
+          class="p-3 bg-slate-900 text-white border-white border-2 border-solid rounded-3xl hover:bg-slate-600 hover:rounded-3xl"
+          type="submit"
+        >
+          Guardar
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

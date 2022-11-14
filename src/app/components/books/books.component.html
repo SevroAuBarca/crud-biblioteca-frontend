@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="grid_cards font-noto">
+    <div *ngFor="let book of books" class="p-3 shadow-xl flex gap-2 rounded-lg">
+      <img src="{{ book.coverImage.url }}" alt="" class="w-32 rounded-lg" />
+      <div class="flex flex-col justify-evenly w-full">
+        <p class="font-light italic text-sm text-slate-500">
+          {{ book.dateAdd || "Fecha" }}
+        </p>
+        <h2 class="font-bold text-xl">{{ book.title }}</h2>
+        <p class="font-normal italic">{{ book.author }}</p>
+        <div class="flex justify-between items-center">
+          <p
+            class="before:content-[url('https://api.iconify.design/fluent-emoji-flat:star.svg')] mr-auto before:w-5 before:mt-auto before:mb-auto font-semibold"
+          >
+            {{ book.rating }}
+          </p>
+          <a
+            class="p-3 bg-slate-900 text-white border-white border-2 border-solid rounded-3xl hover:bg-slate-600 hover:rounded-3xl"
+            href="/{{ book._id }}"
+            >Ver Mas</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

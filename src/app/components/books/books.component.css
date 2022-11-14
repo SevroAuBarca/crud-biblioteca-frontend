@@ -1,0 +1,12 @@
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.grid_cards {
+  width: 100%;
+  max-width: 948px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 300px));
+  gap: 1rem;
+}
